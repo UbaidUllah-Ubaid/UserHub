@@ -29,6 +29,8 @@ jobs:
         run: npm ci
       - name: Build site
         run: npm run build -- --base-href /UserHub/
+      - name: Configure SPA fallback
+        run: cp dist/UserHub/browser/index.html dist/UserHub/browser/404.html
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
