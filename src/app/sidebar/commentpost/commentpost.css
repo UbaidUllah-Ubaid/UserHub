@@ -1,0 +1,50 @@
+
+.comments-list {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #dbe4f0;
+}
+
+/* Single Comment */
+.comment {
+  padding: 13px 15px;
+  margin-bottom: 10px;
+  background: #f4f8ff;
+  border: 1px solid #d9e5f5;
+  border-left: 4px solid #6c8fc7;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.comment:hover {
+  background: #eef5ff;
+  border-left-color: #4f75b5;
+}
+
+/* Comment Name */
+.comment h5 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #315b91;
+}
+
+/* Email */
+.comment-email {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #7b8794;
+}
+
+/* Comment Text */
+.comment-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* Last comment */
+.comment:last-child {
+  margin-bottom: 0;
+}

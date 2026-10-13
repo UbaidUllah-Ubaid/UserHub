@@ -1,0 +1,17 @@
+<aside class="sidebar" [class.open]="isOpen">
+  <div class="sidebar-header"> <img src="group.png" alt="Group Icon" class="sidebar-icon" />
+    <h3>UserHub</h3>
+  </div>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <i class="fa-solid fa-house"></i> Dashboard </a>
+    <a routerLink="/profile" routerLinkActive="active">
+      <i class="fa-solid fa-user"></i> User Profile </a>
+    <a routerLink="/overview" routerLinkActive="active"> <i class="fa-solid fa-magnifying-glass-chart"></i> Overview
+    </a>
+    <a routerLink="/whatlearn" routerLinkActive="active"> <i class="fa-solid fa-graduation-cap"></i>
+      What I Learn </a>
+    <a routerLink="/logout" routerLinkActive="active"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout </a>
+  </nav>
+
+  <!-- <router-outlet></router-outlet> -->

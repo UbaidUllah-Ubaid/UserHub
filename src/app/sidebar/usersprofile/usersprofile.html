@@ -1,0 +1,255 @@
+
+<div class="profile-layout row">
+
+
+  <!-- =========================================
+       USER LIST
+       LG SCREEN PAR SHOW HOGI
+       MOBILE PAR HIDE HOGI
+  ========================================== -->
+
+  <div class="users-list d-none d-lg-flex">
+
+    <h2 class="user-heading">
+      Users
+    </h2>
+
+
+    <!-- SEARCH -->
+
+   <div class="input-group search-user">
+
+  <input
+    type="text"
+    class="searchbar-user"
+    placeholder="Search User"
+    [(ngModel)]="searchuser"
+    (input)="searchUsers()"
+  >
+
+  <button
+    class="btn btn-outline-secondary search-user-button"
+    type="button" (click)="clickToSearch()">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+  </button>
+
+@if (searchuser.trim() !== '') {
+  
+
+  <div class="search-results">
+
+    @for (user of filteredUsers; track user.id) {
+
+      <div class="search-result-user"
+      (click)="selectUser(user)">
+        {{ user.name }}
+      </div>
+
+    }
+
+  </div>
+
+}
+
+</div>
+
+
+
+
+    <!-- =====================================
+         USERS SCROLL AREA
+    ====================================== -->
+
+    <div class="users-container">
+
+      @for(user of userData(); track user.id) {
+
+        <div class="user-row" [class.selected]="selectedUserId === user.id" (click)="passData(user.id)">
+
+          <!-- IMAGE -->
+
+          <div class="user-image">
+
+            <img
+              src="./istockphoto-1364917563-612x612.jpg"
+              alt="User"
+            >
+
+          </div>
+
+
+          <!-- USER INFO -->
+
+          <div class="user-info">
+
+            <h3>
+              {{ user.name }}
+            </h3>
+
+            <p>
+              {{ user.email }}
+            </p>
+
+          </div>
+
+
+          <!-- ARROW -->
+
+          <div class="user-arrow">
+
+            <span>›</span>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================
+       RIGHT SIDE CONTENT
+  ========================================== -->
+
+
+<div class="profile-content">
+
+
+  <!-- =====================================
+       USER DETAILS
+       showPosts FALSE HO TO SAARE USERS SHOW HONGE
+  ====================================== -->
+
+
+  @if (!showPosts) {
+
+    <div class="profiles">
+
+
+
+    @for (user of filteredUsers; track user.id) {
+
+      <div class="profile-card">
+        <!-- <div class="profile-card-cont"> -->
+
+        
+
+
+        <!-- IMAGE -->
+
+        <div class="profile-image">
+
+          <img
+            class="profile-image2"
+            src="./istockphoto-1364917563-612x612.jpg"
+            alt="User"
+          >
+
+        </div>
+
+
+        <!-- USER INFORMATION -->
+
+        <div class="user-info profile-info">
+
+          <h3>
+            {{ user.name }}
+          </h3>
+
+
+          <p class="email-color">
+            {{ user.email }}
+          </p>
+
+
+          <!-- DETAILS -->
+
+          <div class="user-details">
+
+            <p>
+              <span>📍</span>
+              {{ user.address.city }}
+            </p>
+
+
+            <p>
+              <span>📞</span>
+              {{ user.phone }}
+            </p>
+
+
+            <p>
+              <span>🌐</span>
+              {{ user.website }}
+            </p>
+
+
+            <!-- MOBILE BUTTON -->
+
+            <button
+              class="post-btn d-lg-none"
+              (click)="passData(user.id); showUserPosts()"
+            >
+              View Posts
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+     </div>
+
+  }
+
+
+  
+
+
+  <!-- =====================================
+       POSTS
+       showPosts TRUE HO TO SELECTED USER KE POSTS
+  ====================================== -->
+
+  @if (showPosts) {
+
+    <div class="posts-wrapper">
+
+      <div class="posts-header">
+
+        <h2>
+          {{ selectedUser.name }}'s Posts
+        </h2>
+
+
+        <!-- MOBILE BACK BUTTON -->
+
+        <button
+          class="back-btn"
+          (click)="showUserDetails()"
+        >
+          ← Back to Profile
+        </button>
+
+      </div>
+
+
+      <app-postuser
+        [userId]="selectedUserId">
+      </app-postuser>
+
+    </div>
+
+  }
+
+</div>
+
+</div>

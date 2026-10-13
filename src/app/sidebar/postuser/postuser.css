@@ -1,0 +1,127 @@
+
+
+.posts-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+/* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+/* width: 500%; */
+  
+
+}
+
+/* Posts Grid Container */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Single Post Card */
+.post-list {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #1b65c666;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Card Hover Effect */
+.post-list:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1;
+}
+
+/* Field Rows Layout */
+.post-list > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* Key Labels (User ID, Post ID, Title, Body) */
+.post-list h4 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 80px;
+}
+
+/* Value Styling */
+.post-list span {
+  color: #125bd1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Specific Field Styling */
+.post-list > div:nth-child(1) span,
+.post-list > div:nth-child(2) span {
+  font-weight: 600;
+  background: #6a76ff37;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #3c4b61;
+}
+
+/* Post Title */
+.post-list > div:nth-child(3) {
+  margin-top: 0.25rem;
+}
+
+.post-list > div:nth-child(3) span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: capitalize;
+}
+
+/* Post Body */
+.post-list > div:nth-child(4) {
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.post-list > div:nth-child(4) span {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* View Comments Button */
+.comment-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  background-color: #0a20dec6;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.comment-btn:hover {
+  background-color: #2563eb;
+}
+
+.comment-btn:active {
+  transform: scale(0.98);
+}

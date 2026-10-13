@@ -1,0 +1,18 @@
+.navbar-style {
+    background-color: rgb(68, 111, 202);
+    border-radius: 10px;
+}
+
+.btn-succes {
+    background-color: rgb(255, 254, 254);
+    color: rgb(25, 75, 238);
+    border: 1px solid rgb(25, 75, 238);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn-succes:hover {
+    background-color: rgb(25, 75, 238);
+    color: rgb(255, 254, 254);
+    border: 1px solid rgb(25, 75, 238);
+}

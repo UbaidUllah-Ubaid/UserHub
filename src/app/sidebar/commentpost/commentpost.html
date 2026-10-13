@@ -1,0 +1,28 @@
+
+
+
+<div class="comments-list">
+
+  @for (comment of commentPost(); track comment.id) {
+
+    <div class="comment">
+        <p class="comment-body">ID: 
+        {{ comment.id }}
+      </p>
+
+      <h5>Name: {{ comment.name }}</h5>
+
+      <p class="comment-email">Email: 
+        {{ comment.email }}
+      </p>
+
+      <p class="comment-body">
+        {{ comment.body }}
+      </p>
+
+    </div>
+
+  }
+
+</div>
+

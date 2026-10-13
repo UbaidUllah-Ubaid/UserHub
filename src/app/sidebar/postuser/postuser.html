@@ -1,0 +1,48 @@
+
+<div class="posts-container col-12">
+
+  @for(post of postUser(); track post.id) {
+
+    <div class="post-list">
+
+      <div>
+        <h4>User ID:</h4>
+        <span>{{post.userId}}</span>
+      </div>
+
+      <div>
+        <h4>Post ID:</h4>
+        <span>{{post.id}}</span>
+      </div>
+
+      <div>
+        <h4>Title:</h4>
+        <span>{{post.title}}</span>
+      </div>
+
+      <div>
+        <h4>Body:</h4>
+        <span>{{post.body}}</span>
+      </div>
+
+      <button
+        (click)="postComments(post.id)"
+        class="comment-btn">
+        View Comments
+      </button>
+
+      @if (postId === post.id) {
+        <div class="comments-container">
+
+          <app-commentpost
+            [postId]="post.id">
+          </app-commentpost>
+
+        </div>
+      }
+
+    </div>
+
+  }
+
+</div>

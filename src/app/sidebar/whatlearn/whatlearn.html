@@ -1,0 +1,163 @@
+
+
+<div class="heading-cont">
+  <h1>What problems or issues might I face?</h1>
+  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem tempora, illo sint enim saepe, totam iure eius id voluptate quibusdam obcaecati. Ut, unde.</span>
+</div>
+
+
+<div class="main-cont row">
+
+<div class="learning-box col-lg-5 col-12">
+
+  <div class="learning-top">
+    <span class="learning-number">01</span>
+    <span class="learning-label">WHAT I LEARNED</span>
+  </div>
+
+  <h3>Controlling Data Visibility with One Button</h3>
+
+  <p>
+    While building UserHub, I faced a problem where I needed to
+    show and hide a post's comments using the same button. I solved
+    this by maintaining a boolean state that tracks whether the
+    comments are visible or hidden. This taught me how the UI can
+    respond to changes in application state.
+  </p>
+
+  <div class="learning-example">
+    <span>Hidden</span>
+    <strong>↔</strong>
+    <span>Visible</span>
+  </div>
+
+  <div class="real-world">
+
+
+<strong>Real-World Use</strong>
+
+<p>
+  The same concept is commonly used in FAQ sections, dropdowns,
+  password visibility, modals, filters, mobile menus and
+  expandable cards.
+</p>
+
+  </div>
+
+</div>
+
+
+
+
+
+<div class="learning-box col-lg-6 col-12">
+
+  <div class="learning-top">
+    <span class="learning-number">02</span>
+    <span class="learning-label">WHAT I LEARNED</span>
+  </div>
+
+  <h3>Master-Detail Pattern & Data Flow</h3>
+
+  <p>
+    While building UserHub, I learned how to fetch only the data
+    related to a selected user. For example, when a user is selected,
+    I need that user's ID to fetch only their posts instead of
+    loading every post.
+  </p>
+
+  <div class="learning-flow">
+
+<div class="flow-box">
+  <strong>User</strong>
+  <span>user.id</span>
+</div>
+
+<div class="flow-arrow">→</div>
+
+<div class="flow-box">
+  <strong>Child Component</strong>
+  <span>@Input()</span>
+</div>
+
+<div class="flow-arrow">→</div>
+
+<div class="flow-box">
+  <strong>Service</strong>
+  <span>Filter by ID</span>
+</div>
+
+<div class="flow-arrow">→</div>
+
+<div class="flow-box">
+  <strong>Posts</strong>
+  <span>Related Data</span>
+</div>
+
+  </div>
+
+  <div class="learning-points">
+
+<div class="learning-point">
+  <span>01</span>
+  <div>
+    <strong>Separation of Concerns</strong>
+    <p>
+      The Service handles data fetching, while the Component
+      focuses on displaying and interacting with the data.
+    </p>
+  </div>
+</div>
+
+<div class="learning-point">
+  <span>02</span>
+  <div>
+    <strong>Filtering Through Parameters</strong>
+    <p>
+      The selected user's ID is passed to the Service so it can
+      request only the posts belonging to that user.
+    </p>
+  </div>
+</div>
+
+<div class="learning-point">
+  <span>03</span>
+  <div>
+    <strong>Parent-to-Child Data Flow</strong>
+    <p>
+      The parent passes the selected user's ID to the child
+      component using Property Binding and <code>@Input()</code>.
+    </p>
+  </div>
+</div>
+
+<div class="learning-point">
+  <span>04</span>
+  <div>
+    <strong>Component & Service Integration</strong>
+    <p>
+      The child component receives the ID and uses it to call
+      the Service and retrieve the required posts.
+    </p>
+  </div>
+</div>
+
+  </div>
+
+  <div class="real-world">
+
+<strong>Real-World Use</strong>
+
+<p>
+  This pattern is useful whenever one piece of data depends on
+  another, such as customers and their orders, products and
+  reviews, employees and their projects, or accounts and their
+  transactions.
+</p>
+
+  </div>
+
+</div>
+
+
+</div>
